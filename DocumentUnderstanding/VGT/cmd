@@ -1,0 +1,61 @@
+# FOR PDF TO IMAGE
+python object_detection/pdf2img.py \
+--pdf 'exam.pdf' \
+--output 'optimg' \
+--format 'jpg'
+
+
+# FOR GRID INFO GENERATOR.PY
+python object_detection/create_grid_input.py \
+--pdf 'exam.pdf' \
+--output 'optgrid/' \
+--tokenizer 'google-bert/bert-base-uncased' \
+--model 'docbank'
+
+# FOR INFERENCE.PY
+python object_detection/inference.py \
+--image_root 'optimg/' \
+--grid_root 'optgrid/' \
+--dataset docbank \
+--image_name 'page_13' \
+--output_root 'optvgt/' \
+--config object_detection/Configs/cascade/docbank_VGT_cascade_PTM.yaml
+--opts MODEL.WEIGHTS 'weights/docbank_VGT_model.pth'
+
+
+# create entirely new webpage with following information
+
+# i will give you output dictionary with  boxes information key "pred_boxes" having x coordinate that is distance of div from left , y coordinate that is distance of div from top, height and width respactively
+# it also have key "scores" which represnt prrobability of box present which is of no use now
+
+# it also have "pred_class" as key which shows different types of div
+# give seperate colours for differnet classes of div like class 7 with red background, 8 with blue etc etc
+# donot dynamically generate and generate only one html file with embedded csv
+# generate boxes such that boxes smaller in size will be in front followed by bigger than them
+
+
+# ADDITIONAL INFO
+
+# tried with torch 1.9 but cuda 11.1, detectron2 isnt working
+pip install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
+
+detectron2 requires torch 1.9 (torchvision 0.10 and torchaudio 0.9)
+and torch 1.9 requires cuda 10.2
+
+python -m pip install detectron2==0.6 -f \
+    https://dl.fbaipublicfiles.com/detectron2/wheels/cu102/torch1.9/index.html  
+pip install torch==1.9.0+cu102 torchvision==0.10.0+cu102 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
+
+
+# tried with torch 1.9 but cuda 10.2, cuda isnt working
+RuntimeError: CUDA error: no kernel image is available for execution on the device
+CUDA kernel errors might be asynchronously reported at some other API call,so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+and
+NVIDIA GeForce RTX 3060 Laptop GPU with CUDA capability sm_86 is not compatible with the current PyTorch installation.
+The current PyTorch install supports CUDA capabilities sm_37 sm_50 sm_60 sm_70.
+If you want to use the NVIDIA GeForce RTX 3060 Laptop GPU GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/
+
+
+#working on cpu
+inference.py, added line -> "cfg.MODEL.DEVICE = "cpu"

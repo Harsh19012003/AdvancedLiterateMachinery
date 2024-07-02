@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Boxes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .box {
+            position: absolute;
+            border: 1px solid #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .class1 { background-color: #f44336; }
+        .class2 { background-color: #4caf50; }
+        .class3 { background-color: #2196f3; }
+        /* Add more classes for different colors as needed */
+    </style>
+</head>
+<body>
+    <!-- First level boxes -->
+    <div class="box class1" style="left: 30.557px; top: 18.4748px; width: 644.6396px; height: 801.2316px;">
+        <!-- First level children -->
+        <div class="box class2" style="left: 45.081px; top: 530.365px; width: 620.1481px; height: 178.6152px;">
+            <!-- Second level children -->
+            <div class="box class3" style="left: 91.1037px; top: 541.2268px; width: 546.0502px; height: 92.798px;">
+                <!-- Third level children -->
+                <div class="box class1" style="left: 286.7128px; top: 541.6981px; width: 143.1039px; height: 87.2548px;"></div>
+                <div class="box class1" style="left: 116.4527px; top: 543.9061px; width: 139.9683px; height: 83.3426px;"></div>
+            </div>
+            <div class="box class1" style="left: 458.8961px; top: 540.517px; width: 142.5108px; height: 88.9536px;"></div>
+            <div class="box class1" style="left: 157.1413px; top: 673.6105px; width: 102.8904px; height: 18.4881px;"></div>
+            <div class="box class1" style="left: 115.5911px; top: 673.6794px; width: 23.1897px; height: 18.6134px;"></div>
+        </div>
+        <div class="box class2" style="left: 36.1153px; top: 719.2272px; width: 637.4056px; height: 91.5755px;">
+            <!-- Second set of second level children -->
+            <div class="box class1" style="left: 548.2986px; top: 748.6394px; width: 55.8777px; height: 12.9142px;">
+                <div class="box class1" style="left: 548.3896px; top: 751.4247px; width: 34.5956px; height: 9.5307px;"></div>
+            </div>
+            <div class="box class1" style="left: 596.1397px; top: 748.9673px; width: 7.22px; height: 12.61px;"></div>
+        </div>
+        <div class="box class1" style="left: 109.8641px; top: 193.7978px; width: 498.6274px; height: 91.787px;">
+            <!-- Second level children -->
+            <div class="box class2" style="left: 460.7277px; top: 194.703px; width: 140.7518px; height: 90.4769px;"></div>
+            <div class="box class2" style="left: 117.3651px; top: 196.0461px; width: 138.1255px; height: 89.2079px;"></div>
+        </div>
+        <div class="box class1" style="left: 103.7456px; top: 372.2714px; width: 506.7871px; height: 86.5245px;">
+            <!-- Second level children -->
+            <div class="box class2" style="left: 287.5542px; top: 378.6px; width: 141.1743px; height: 78.7341px;"></div>
+            <div class="box class2" style="left: 462.119px; top: 379.783px; width: 139.747px; height: 75.1958px;"></div>
+        </div>
+        <div class="box class1" style="left: 55.5892px; top: 18.7357px; width: 607.4135px; height: 51.7922px;"></div>
+        <div class="box class2" style="left: 107.1593px; top: 83.1975px; width: 424.5945px; height: 39.0712px;">
+            <!-- Second level children -->
+            <div class="box class1" style="left: 107.6298px; top: 110.3996px; width: 423.9774px; height: 11.8593px;"></div>
+            <div class="box class1" style="left: 107.2715px; top: 83.2112px; width: 176.8515px; height: 19.9754px;"></div>
+            <div class="box class1" style="left: 314.8196px; top: 87.0971px; width: 51.5477px; height: 10.7614px;"></div>
+        </div>
+        <div class="box class1" style="left: 287.1452px; top: 194.2032px; width: 141.8863px; height: 92.4704px;"></div>
+        <div class="box class1" style="left: 117.0643px; top: 366.9367px; width: 139.7062px; height: 88.6128px;"></div>
+        <div class="box class1" style="left: 113.1688px; top: 673.7156px; width: 273.45px; height: 35.9945px;"></div>
+        <div class="box class1" style="left: 460.0588px; top: 313.2395px; width: 142.9706px; height: 62.5511px;"></div>
+        <div class="box class1" style="left: 288.2242px; top: 312.2604px; width: 127.9594px; height: 62.5127px;"></div>
+        <div class="box class1" style="left: 116.328px; top: 313.1845px; width: 140.3574px; height: 46.4414px;"></div>
+        <div class="box class1" style="left: 116.4405px; top: 142.4533px; width: 141.5206px; height: 45.9931px;"></div>
+        <div class="box class1" style="left: 288.1917px; top: 484.7234px; width: 139.8864px; height: 46.524px;"></div>
+        <div class="box class1" style="left: 116.5221px; top: 484.6494px; width: 130.0149px; height: 46.8887px;"></div>
+        <div class="box class1" style="left: 460.041px; top: 142.4497px; width: 132.5293px; height: 46.1236px;"></div>
+        <div class="box class1" style="left: 459.8793px; top: 484.5547px; width: 129.4454px; height: 46.7955px;"></div>
+        <div class="box class1" style="left: 288.3173px; top: 142.4946px; width: 110.6942px; height: 46.0847px;"></div>
+        <div class="box class1" style="left: 106.7816px; top: 83.22px; width: 233.3653px; height: 19.7598px;"></div>
+        <div class="box class1" style="left: 116.318px; top: 313.2078px; width: 43.6231px; height: 11.0156px;"></div>
+    </div>
+    <!-- Additional top-level boxes -->
+    <div class="box class1" style="left: 36.843px; top: 12.6907px; width: 58.8815px; height: 791.3467px;"></div>
+    <div class="box class2" style="left: 45.376px; top: 814.9465px; width: 112.9314px; height: 6.8795px;"></div>
+    <div class="box class3" style="left: 593.6528px; top: 815.2188px; width: 50.9035px; height: 5.7943px;"></div>
+</body>
+</html>
+

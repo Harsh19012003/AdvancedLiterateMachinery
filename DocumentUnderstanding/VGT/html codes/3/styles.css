@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    position: relative;
+    width: 700px; /* Adjust width as needed */
+    height: 850px; /* Adjust height as needed */
+    border: 1px solid #ccc;
+}
+
+.box {
+    position: absolute;
+    border: 2px solid black;
+    box-sizing: border-box;
+}
+
+.class-2 {
+    background-color: orange;
+}
+
+.class-5 {
+    background-color: yellow;
+}
+
+.class-7 {
+    background-color: red;
+}
+
+.class-8 {
+    background-color: blue;
+}

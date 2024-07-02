@@ -8,7 +8,7 @@ in training / testing. They will not work for everyone, but many users may find 
 The behavior of functions/classes in this file is subject to change,
 since they are meant to represent the "common default behavior" people need in their projects.
 """
-
+import cv2
 import argparse
 import logging
 import os
@@ -76,6 +76,8 @@ __all__ = [
     "DefaultPredictor",
     "GridTextTrainer",
 ]
+
+oggheight = 2
 
 def torch_memory(device, tag=""):
     # Checks and prints GPU memory
@@ -339,9 +341,18 @@ class DefaultPredictor:
             #     # whether the model expects BGR inputs or RGB
             #     import ipdb;ipdb.set_trace() 
             #     original_image = original_image[:, :, ::-1]
+
+            # print("originalimgname", original_image)
+            # cv2.imshow("xyz", original_image)
+            # cv2.waitKey(0)
             
             height, width = original_image.shape[:2]
             image, transforms = T.apply_transform_gens([self.aug], original_image)
+            print("IMAGE.SHAPE", type(image))
+            global oggheight
+            oggheihgt, oggwidth = image.shape[:2]
+            print("oggheight and oggwidth", oggheihgt, "   ", oggwidth)
+            
             
             # add grid    
             image_shape = image.shape[:2]  # h, w
