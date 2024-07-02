@@ -1,24 +1,24 @@
 # FOR PDF TO IMAGE
 python object_detection/pdf2img.py \
---pdf 'exam.pdf' \
---output 'optimg' \
+--pdf 'inputs/exam.pdf' \
+--output 'outputimg' \
 --format 'jpg'
 
 
 # FOR GRID INFO GENERATOR.PY
 python object_detection/create_grid_input.py \
---pdf 'exam.pdf' \
---output 'optgrid/' \
+--pdf 'inputs/exam.pdf' \
+--output 'outputgrid/' \
 --tokenizer 'google-bert/bert-base-uncased' \
 --model 'docbank'
 
 # FOR INFERENCE.PY
 python object_detection/inference.py \
---image_root 'optimg/' \
---grid_root 'optgrid/' \
+--image_root 'outputimg/' \
+--grid_root 'outputgrid/' \
 --dataset docbank \
 --image_name 'page_13' \
---output_root 'optvgt/' \
+--output_root 'outputvgt/' \
 --config object_detection/Configs/cascade/docbank_VGT_cascade_PTM.yaml
 --opts MODEL.WEIGHTS 'weights/docbank_VGT_model.pth'
 
